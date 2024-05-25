@@ -13,7 +13,7 @@
 ## :sparkles: Features
 
 - [x] Coding Fast.
-- [x] Access to code snippts across all devices.
+- [x] Access to code snippets across all devices.
 - [x] Access to every code part by shortcut.
 
 <!-- ## :rocket: Technologies ##
@@ -36,10 +36,10 @@ $ git clone https://github.com/IbrahimHosseini/swift-CodeSnippets.git
 # Access
 $ cd swift-CodeSnippets
 
-# Move folder to your cloud storage (one drive or other cloud storages)
+# Move the folder to your cloud storage (one drive or other cloud storage)
 $ mv -v /Users/YOUR_USERNAME/Downloads/swift-CodeSnippets/CodeSnippets ~/Users/YOUR_USERNAME/Library/CloudStorage/OneDrive-Personal/Documents/CodeSnippets
 
-# Link cloud code snippets to your xcode code snippts
+# Link cloud code snippets to your Xcode code snippets
 $ ln -s ~/Users/YOUR_USERNAME/Library/CloudStorage/OneDrive-Personal/Documents/CodeSnippets /Users/YOUR_USERNAME/Library/Developer/Xcode/UserData/
 
 # replacing YOUR_USERNAME.
