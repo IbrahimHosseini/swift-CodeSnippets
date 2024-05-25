@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>swift-configurationPlist</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>class Configuration {
+    static let shared = Configuration()
+
+    var baseURL: String = ""
+
+    private init() {
+        if let dictionary = Bundle.main.infoDictionary,
+           let configuration = dictionary["Configuration"] as? String {
+            let path = Bundle.main.path(forResource: "Configuration", ofType: "plist")
+            let config = NSDictionary(contentsOfFile: path!)
+
+            for (key, value) in config! {
+                if let key = key as? String,
+                   let value = value as? [String: Any] {
+                    if key == configuration {
+                        baseURL  = value["baseURL"] as? String ?? ""
+                        return
+                    }
+                }
+            }
+        }
+        fatalError("Error: Configuration file doesn't exist in project directory, please include it to be able to use this class")
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>ED8022B9-9814-47D8-BEF7-0F713BD05BE1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Property list Configuration</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

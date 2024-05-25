@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>swift-apiEndpointImp</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>enum &lt;#name#&gt;API: APIEndpoint {
+case &lt;#itemName#&gt;
+
+    var path: String { &lt;#path#&gt; }
+
+    var httpBody: [String : Any]? {
+        switch self {
+        case .&lt;#itemName#&gt;:
+            return &lt;#value#&gt;
+        }
+    }
+
+    var method: HTTPMethod { &lt;#httpMethod#&gt; }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4C8670BD-3208-4A11-8F2E-B76859BBA4A9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>API endpoints</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

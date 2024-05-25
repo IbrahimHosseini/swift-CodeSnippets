@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>swift-networkLayer</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>class Network&lt;EndpointType: APIEndpoint&gt;: APIClient {
+
+    private let apiHandler: APIHandler
+    private let responseHandler: ResponseHandler
+
+    init(
+        apiHandler: APIHandler,
+        responseHandler: ResponseHandler
+    ) {
+        self.apiHandler = apiHandler
+        self.responseHandler = responseHandler
+    }
+
+    func request&lt;T: Decodable&gt;(_ endpoint: EndpointType) async -&gt; (Result&lt;T, NetworkError&gt;) {
+
+        guard let request = try? endpoint.asURLRequest()
+        else { return .failure(.badRequest)}
+
+        do {
+            let data = try await apiHandler.getData(type: T.self, url: request)
+            let response = await responseHandler.getResponse(type: T.self, data: data)
+
+            switch response {
+            case .success(let model):
+                return .success(model)
+            case .failure(let error):
+                return .failure(error)
+            }
+
+        } catch {
+            return .failure(.noData)
+        }
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1C963628-7DB2-4471-A07D-0A5AE8F08405</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Network Layer implementation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>swift-apiHandlerAndImplementation</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>protocol APIHandler {
+    func getData(with request: URLRequest) async throws -&gt; Data
+}
+
+class APIHandlerImp: APIHandler {
+    func getData(with request: URLRequest) async throws -&gt; Data {
+        let (data, _ ) = try await URLSession.shared.data(for: request)
+        return data
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DEC1FD56-0992-40E4-A9DC-212989FA6EC0</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>API Handler and implementation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>swift-endpointAPI</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>protocol APIEndpoint {
+
+    /// base of API url
+    var baseURL: URL { get }
+
+    /// path of the endpoint API
+    var path: String { get }
+
+    /// set the HTTP method of API
+    var method: HTTPMethod { get }
+
+    /// set the headers for API
+    var headers: [String: String]? { get }
+
+    /// set the API parameters
+    var httpBody: [String: Any]? { get }
+
+}
+
+extension APIEndpoint {
+
+    /// set the base url from environment
+    var baseURL: URL { URL(string: Constants.baseURL)! }
+
+    var method: HTTPMethod { .get }
+
+    var headers: [String: String]? {
+        return ["Accept": "application/json",
+                "Content-Type": "application/json"]
+    }
+
+    var httpBody: [String: Any]? { [:] }
+
+    public func asURLRequest() throws -&gt; URLRequest {
+        
+        /// set the path and create the complete url
+        let url = baseURL.appendingPathComponent(path)
+
+        var request = URLRequest(url: url)
+
+        request.httpMethod = method.rawValue
+
+        // set the header to request
+        request.allHTTPHeaderFields = headers
+
+        request.httpBody = httpBody?.jsonData
+
+        return request
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1C89A4FC-40B1-46D4-9F71-2CCD9691977F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>API Endpoint protocol</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

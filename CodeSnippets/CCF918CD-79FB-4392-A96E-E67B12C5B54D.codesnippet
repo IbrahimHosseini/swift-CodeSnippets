@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>swift-responseHandlerAndImplementation</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>protocol ResponseHandler {
+    func getResponse&lt;T: Decodable&gt;(type: T.Type, data: Data) async -&gt; (Result&lt;T, NetworkError&gt;)
+}
+
+class ResponseHandlerImp: ResponseHandler {
+    func getResponse&lt;T&gt;(type: T.Type, data: Data) async -&gt; (Result&lt;T, NetworkError&gt;) where T : Decodable {
+
+        do {
+            let response = try JSONDecoder().decode(type.self, from: data)
+            return .success(response)
+        } catch {
+            return .failure(.decodingFailed)
+        }
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CCF918CD-79FB-4392-A96E-E67B12C5B54D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Response handler implementation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
