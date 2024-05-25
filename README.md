@@ -4,44 +4,17 @@
   &#xa0;
 </div>
 
-<h1 align="center">Xcode Code Snippts</h1>
-
-<!-- <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/ibrahimhosseini/xcodedocs?color=56BEB8">
-
-  <img alt="License" src="https://img.shields.io/github/license/ibrahimhosseini/xcodedocs?color=56BEB8">
-
-</p> -->
-
-<!-- Status -->
-
-<!-- <h4 align="center"> 
-	🚧  XcodeDocs 🚀 Under construction...  🚧
-</h4> 
-
-<hr> -->
-<!-- 
-<p align="center">
-  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
-  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
-  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">Author</a>
-</p>
-
-<br> -->
+<h1 align="center">Live Xcode Code Snippts</h1>
 
 ## :dart: About
 
-Sync Your Xcode Code Snippets Across Devices with One Drive
+***Sync Your Xcode Code Snippets Across Devices with One Drive.***
 
 ## :sparkles: Features
 
-:heavy_check_mark: Coding Fast.
-:heavy_check_mark: Access to code snippts across all devices.
-:heavy_check_mark: Access to every code part by shortcut.
+- [x] Coding Fast.
+- [x] Access to code snippts across all devices.
+- [x] Access to every code part by shortcut.
 
 <!-- ## :rocket: Technologies ##
 
@@ -72,7 +45,7 @@ $ ln -s ~/Users/YOUR_USERNAME/Library/CloudStorage/OneDrive-Personal/Documents/C
 # replacing YOUR_USERNAME.
 ```
 
-## :memo: License ##
+## :memo: License
 
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE) file.
 
