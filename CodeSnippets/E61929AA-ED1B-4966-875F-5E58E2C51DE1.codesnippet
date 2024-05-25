@@ -3,33 +3,38 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>swift-extension-dictionaryToJSONString</string>
+	<string>swift-logger</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>extension Dictionary {
-    var toJSONString: String? {
-        if let jsonData = jsonData {
-            let jsonString = String(data: jsonData, encoding: .utf8)
-            return jsonString
-        }
-        return nil
-    }
+	<string>import OSLog
+
+extension Logger {
+
+    /// Using your bundle identifier is a great way to ensure a unique identifier.
+    private static var subsystem = Bundle.main.bundleIdentifier!
+
+    /// Logs the view cycles like a view that appeared.
+    static let viewCycle = Logger(subsystem: subsystem, category: "viewCycle")
+
+    /// All logs related to tracking and analytics.
+    static let statistics = Logger(subsystem: subsystem, category: "statistics")
+
 }
 </string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>4CE6A76C-E988-48B3-86EC-7B4FBC5EDFD5</string>
+	<string>E61929AA-ED1B-4966-875F-5E58E2C51DE1</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>My Code Snippet</string>
+	<string>Logger Extenstion</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
