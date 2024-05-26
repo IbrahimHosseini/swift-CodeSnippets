@@ -3,29 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>swift-ui-button</string>
+	<string>swift-error</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>private let linkButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.titleLabel?.font = .systemFont(ofSize: 10)
-        button.setTitleColor(.systemBlue, for: .normal)
-        return button
-    }()</string>
+	<string>#error("&lt;#T##message#&gt;")</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>294FFC7B-9253-4375-A305-227D1C04EE82</string>
+	<string>9B40F97D-AF07-44B3-8404-CA8BC4C37666</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>button</string>
+	<string>Error</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
