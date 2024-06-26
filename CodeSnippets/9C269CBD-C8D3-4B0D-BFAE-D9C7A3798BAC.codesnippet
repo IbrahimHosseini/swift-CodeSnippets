@@ -3,26 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>swift-ui-button</string>
+	<string>swift-fixme</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>private let linkButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.titleLabel?.font = .systemFont(ofSize: 10)
-        button.setTitleColor(.systemBlue, for: .normal)
-        return button
-    }()</string>
+	<string>// TODO: - fix me</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>294FFC7B-9253-4375-A305-227D1C04EE82</string>
+	<string>9C269CBD-C8D3-4B0D-BFAE-D9C7A3798BAC</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>button</string>
+	<string>Fixed me</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
