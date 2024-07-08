@@ -12,42 +12,56 @@
 	<string>import os.log
 import Foundation
 
-struct LoggerSys {
+struct SLogger {
     
     static func log(
         _ items: Any...,
         type: OSLogType = .default,
         logCategory: LogCategory = .default,
-        delimiter: String = " ",
+        delimiter: Delimiter = .space,
         function: String = #function,
         file: String = #file,
         line: Int = #line
     ) {
-                
+        
         let file = lastPath(file)
         
         let prefix = "\(type.sign) [\(logCategory.rawValue)] [\(formattedDate)] [\(file), \(function), line: \(line)]  &gt;&gt;&gt;"
         var message = prefix
         
         items.forEach { a in
-            message.append(delimiter)
+            message.append(delimiter.rawValue)
             message.append(String(describing: a))
         }
         
-       let log = getLog(logCategory)
+        let log = getLog(logCategory)
         
         write(message, log: log, type: type)
     }
-
+    
     enum LogCategory: String {
-        case `default` = "ViewController"
+        case `default` = "System"
         case socket = "WebSocket"
+        case mqtt = "MQTT"
         case network = "Network"
+        case cli = "CLI"
+        case database = "Database"
+        case systemState = "SystemState"
     }
-
+    
+    enum Delimiter: String {
+        case space = " "
+        case stare = "*"
+        case slash = "/"
+        case backslash = "\\"
+        case tab = "    "
+        case dualStare = "**"
+        case dualEqual = "=="
+    }
+    
 }
 
-extension LoggerSys {
+extension SLogger {
     fileprivate static func lastPath(_ file: String) -&gt; String {
         URL(string: file)?.lastPathComponent ?? ""
     }
@@ -57,7 +71,7 @@ extension LoggerSys {
     }
     
     fileprivate static func getLog(_ category: LogCategory) -&gt; OSLog {
-        OSLog(subsystem: Bundle.main.bundleIdentifier!, category: category.rawValue)
+        OSLog(subsystem: Bundle.main.bundleIdentifier!, category: "ContentBlockerMLP " + category.rawValue)
     }
     
     fileprivate static func write(
@@ -78,6 +92,7 @@ extension OSLogType {
         }
     }
 }
+
 </string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>F358465E-CC14-42C7-98E8-BE807B40B741</string>
