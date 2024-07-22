@@ -9,15 +9,16 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>import os.log
+	<string>
+import os.log
 import Foundation
 
-struct SLogger {
+struct OSLogger {
     
     static func log(
         _ items: Any...,
         type: OSLogType = .default,
-        logCategory: LogCategory = .default,
+        category: category = .default,
         delimiter: Delimiter = .space,
         function: String = #function,
         file: String = #file,
@@ -26,7 +27,7 @@ struct SLogger {
         
         let file = lastPath(file)
         
-        let prefix = "\(type.sign) [\(logCategory.rawValue)] [\(formattedDate)] [\(file), \(function), line: \(line)]  &gt;&gt;&gt;"
+        let prefix = "\(type.sign) [\(category.rawValue)] [\(formattedDate)] [\(file), \(function), line: \(line)]  &gt;&gt;&gt;"
         var message = prefix
         
         items.forEach { a in
@@ -34,12 +35,12 @@ struct SLogger {
             message.append(String(describing: a))
         }
         
-        let log = getLog(logCategory)
+        let log = getLog(category)
         
         write(message, log: log, type: type)
     }
     
-    enum LogCategory: String {
+    enum category: String {
         case `default` = "System"
         case socket = "WebSocket"
         case mqtt = "MQTT"
@@ -61,7 +62,7 @@ struct SLogger {
     
 }
 
-extension SLogger {
+extension OSLogger {
     fileprivate static func lastPath(_ file: String) -&gt; String {
         URL(string: file)?.lastPathComponent ?? ""
     }
@@ -70,7 +71,7 @@ extension SLogger {
         Date().formatted(date: .abbreviated, time: .standard)
     }
     
-    fileprivate static func getLog(_ category: LogCategory) -&gt; OSLog {
+    fileprivate static func getLog(_ category: category) -&gt; OSLog {
         OSLog(subsystem: Bundle.main.bundleIdentifier!, category: "ContentBlockerMLP " + category.rawValue)
     }
     
@@ -86,6 +87,7 @@ extension SLogger {
 extension OSLogType {
     var sign: String {
         switch self {
+        case .info: "✅"
         case .fault: "🔴"
         case .error: "⚠️"
         default: "ℹ️"
