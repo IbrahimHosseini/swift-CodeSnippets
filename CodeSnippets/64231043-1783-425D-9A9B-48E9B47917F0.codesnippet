@@ -3,24 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>swift-todo</string>
+	<string>swift-vm-viewModifire</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// TODO: - &lt;#description#&gt;</string>
+	<string>struct &lt;#modifireName#&gt;: ViewModifier {
+    func body(content: Content) -&gt; some View {
+        content
+    }
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>9FA987AE-AF0B-4202-B3FB-F0AE2BC24CCC</string>
+	<string>64231043-1783-425D-9A9B-48E9B47917F0</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Todo command</string>
+	<string>View modifire</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
