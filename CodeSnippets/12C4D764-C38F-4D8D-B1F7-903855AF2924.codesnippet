@@ -3,24 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>swift-pv</string>
+	<string>swift-sop-stateobjectprivate</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>private var &lt;#name#&gt;: &lt;#type#&gt;</string>
+	<string>@StateObject private var &lt;#name#&gt;: &lt;#type#&gt; = &lt;#initializer#&gt;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>28718A77-6232-4671-9139-47C6AD4754A0</string>
+	<string>12C4D764-C38F-4D8D-B1F7-903855AF2924</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Private variable</string>
+	<string>Private State object</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

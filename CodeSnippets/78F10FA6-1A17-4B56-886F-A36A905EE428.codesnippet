@@ -3,24 +3,36 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>swift-ps-stateprivate</string>
+	<string>swift-viewmodifire-vm</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@State private var &lt;#name#&gt;: &lt;#type#&gt; = &lt;#value#&gt;</string>
+	<string>import SwiftUI
+
+struct &lt;#structName#&gt;: ViewModifier {
+    func body(content: Content) -&gt; some View {
+        content
+    }
+}
+
+extension View {
+    func &lt;#name#&gt;() -&gt; some View {
+        modifier(&lt;#structName#&gt;())
+    }
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B2251455-C94C-4833-BA6C-D96E9E4E5698</string>
+	<string>78F10FA6-1A17-4B56-886F-A36A905EE428</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Private State </string>
+	<string>View Modifire</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
