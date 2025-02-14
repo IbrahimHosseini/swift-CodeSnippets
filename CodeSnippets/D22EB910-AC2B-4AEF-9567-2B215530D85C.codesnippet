@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>swift-network-apiClientProtocol</string>
+	<string>swift-network-apiclientprotocol</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -12,7 +12,7 @@
 	<string>protocol APIClient {
     associatedtype EndpointType: APIEndpoint
 
-    func request&lt;T: Decodable&gt;(_ endpoint: EndpointType) async -&gt; (Result&lt;T, NetworkError&gt;)
+    func request&lt;T: Decodable&gt;(_ endpoint: EndpointType) async -&gt; (Result&lt;T, Error&gt;)
 }
 </string>
 	<key>IDECodeSnippetIdentifier</key>
